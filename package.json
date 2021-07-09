@@ -1,0 +1,30 @@
+{
+  "name": "alumni",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node -r tsconfig-paths/register src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type-gen": "graphql-codegen --config codegen.yml"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "github:types/express",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^16.0.0",
+    "nodemon": "^2.0.9",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^3.10.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "apollo-server": "^2.25.2",
+    "class-validator": "^0.13.1",
+    "graphql": "^15.5.1",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
+  }
+}
