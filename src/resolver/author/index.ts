@@ -13,13 +13,13 @@ export class Author {
 }
 
 @Resolver(Author)
-class BookResolver {
+class AuthorResolver {
   @Query((returns) => [Author])
-  async books() {
-    return Author;
+  async authors() {
+    return authors;
   }
   @Query((returns) => Author)
-  async book(@Arg("id", { nullable: false }) id?: number) {
+  async author(@Arg("id", { nullable: false }) id?: number) {
     return authors.find((a) => a.id === id);
   }
   @FieldResolver()
@@ -28,4 +28,4 @@ class BookResolver {
   }
 }
 
-export default BookResolver;
+export default AuthorResolver;
