@@ -1,10 +1,10 @@
-import "reflect-metadata";
-import { ApolloServer } from "apollo-server";
-import { buildSchema } from "type-graphql";
-import { createConnection } from "typeorm";
+import 'reflect-metadata';
+import { ApolloServer } from 'apollo-server';
+import { buildSchema } from 'type-graphql';
+import { createConnection } from 'typeorm';
 
-import BookResolver from "@/resolver/book";
-import AuthorResolver from "@/resolver/author";
+import BookResolver from '@/resolver/book';
+import AuthorResolver from '@/resolver/author';
 
 async function bootstrap() {
   try {
@@ -26,7 +26,7 @@ async function bootstrap() {
         // URL: http://localhost:4000/.well-known/apollo/server-health
 
         if (true) {
-          resolve("ok");
+          resolve('ok');
         } else {
           reject();
         }

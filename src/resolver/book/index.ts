@@ -1,6 +1,15 @@
-import { ObjectType, Field, Resolver, Query, Arg, ID, FieldResolver, Root } from "type-graphql";
-import { Author } from "@/resolver/author";
-import { books, authors } from "@/model";
+import {
+  ObjectType,
+  Field,
+  Resolver,
+  Query,
+  Arg,
+  ID,
+  FieldResolver,
+  Root,
+} from 'type-graphql';
+import { Author } from '@/resolver/author';
+import { books, authors } from '@/model';
 
 @ObjectType()
 export class Book {
@@ -19,7 +28,7 @@ class BookResolver {
     return books;
   }
   @Query((returns) => Book)
-  async book(@Arg("id", { nullable: true }) id?: number) {
+  async book(@Arg('id', { nullable: true }) id?: number) {
     return books.find((b) => b.id === id);
   }
   @FieldResolver()
