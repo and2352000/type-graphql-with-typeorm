@@ -1,4 +1,4 @@
-# My Template Type-Graphql with Typeorm Bankend
+# My Template Type-Graphql with Typeorm Backend
 
 ## Environment:
 - Node.js : v14.17.3
