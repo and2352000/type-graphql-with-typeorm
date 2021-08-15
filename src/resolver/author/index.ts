@@ -7,10 +7,10 @@ import {
   ID,
   Root,
   FieldResolver,
+  Ctx,
 } from 'type-graphql';
 import { authors, books } from '@/model';
 import { Book } from '@/resolver/book';
-
 @ObjectType()
 export class Author {
   @Field((value) => ID)

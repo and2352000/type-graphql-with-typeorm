@@ -1,9 +1,9 @@
 import 'reflect-metadata';
-// import { ApolloServer } from 'apollo-server';
 import { buildSchema } from 'type-graphql';
 import { createConnection } from 'typeorm';
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
+import session from 'express-session';
 
 import BookResolver from '@/resolver/book';
 import AuthorResolver from '@/resolver/author';
@@ -18,13 +18,22 @@ async function bootstrap() {
 
   const server = new ApolloServer({
     schema,
-    context: {
-      session: {},
-    },
+    context: ({ req }) => ({
+      session: req.session || null,
+    }),
   });
 
   await server.start();
   const app = express();
+
+  app.use(
+    session({
+      secret: 'testtesttest',
+      resave: false,
+      saveUninitialized: true,
+      cookie: { secure: true, maxAge: 60000 },
+    })
+  );
 
   app.get('/health', async (req, res) => {
     try {
